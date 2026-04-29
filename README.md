@@ -16,3 +16,12 @@ Note: This will impact Vite dev & build performances.
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+# To Do List
+
+## Setup
+1. Run `npm install`
+2. Create a `.env` file with your Firebase config
+3. Create a `db.json` file with `{ "tasks": [] }`
+4. Run `json-server --watch db.json --port 3001`
+5. Run `npm run dev`

@@ -1,26 +1,4 @@
-import { useState } from "react";
-
-function ToDoList() {
-  const [inputValue, setInputValue] = useState("");
-  const [tasks, setTasks] = useState([]);
-
-  const handleAdd = () => {
-    const trimmed = inputValue.trim();
-    if (!trimmed) return; // stops blank tasks from being added
-    setInputValue("");
-    setTasks((tasks) => [
-      ...tasks,
-      {
-        id: tasks.length + 1,
-        name: trimmed,
-      },
-    ]);
-  };
-
-  const deleteTask = (id) => {
-    setTasks((tasks) => tasks.filter((task) => task.id !== id));
-  };
-
+function ToDoList({ tasks, inputValue, setInputValue, handleAdd, deleteTask }) {
   return (
     <div>
       <h1>To Do List</h1>
@@ -29,7 +7,7 @@ function ToDoList() {
         type='text'
         placeholder='Enter Task'
         onChange={(e) => setInputValue(e.target.value)}
-      ></input>
+      />
       <button onClick={handleAdd}>Add</button>
       <h3>Current Tasks</h3>
       <ul>
@@ -41,7 +19,7 @@ function ToDoList() {
         ))}
       </ul>
     </div>
-  );
+  )
 }
 
-export default ToDoList;
+export default ToDoList
